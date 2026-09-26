@@ -19,7 +19,7 @@
 <body>
   <p class="home"><a href="./">← zurück</a></p>
   <h1>Datenschutzerklärung</h1>
-  <p class="meta">Stand: 26. September 2026</p>
+  <p class="meta">Stand: 27. September 2026</p>
 
   <h2>1. Verantwortlicher</h2>
   <p>
@@ -62,7 +62,7 @@
 
   <h3>3.6 Standortdaten</h3>
   <p>Die Karte zeigt deine Position nur auf deinem Gerät; dafür übertragen wir deinen Standort nicht.</p>
-  <p>Wenn du bei einem Event einen Ort suchst oder eine Adresse eingibst, übermittelt unser Server diese Suchanfrage an Geoapify, damit wir Vorschläge und Koordinaten ermitteln können. Anfrage und Ergebnis speichern wir außerdem in einem Cache in unserer Datenbank. Treffer haben derzeit keine feste Löschfrist; erfolglose Anfragen werden nach 30 Tagen erneut geprüft. Als Reserve für die Umrechnung einer fertigen Adresse kann unser Server OpenStreetMap/Nominatim anfragen.</p>
+  <p>Wenn du bei einem Event einen Ort suchst oder eine Adresse eingibst, übermittelt unser Server diese Suchanfrage an Geoapify, damit wir Vorschläge und Koordinaten ermitteln können. Geoapify erhält dabei nur den eingegebenen Text, nicht deine IP-Adresse oder dein Konto, verarbeitet die Anfrage in der EU und löscht Anfragedaten nach eigenen Angaben innerhalb von 24 Stunden, bei Verdacht auf Missbrauch spätestens nach zwei Monaten. Anfrage und Ergebnis speichern wir außerdem in einem Cache in unserer Datenbank. Treffer haben derzeit keine feste Löschfrist; erfolglose Anfragen werden nach 30 Tagen erneut geprüft. Als Reserve für die Umrechnung einer fertigen Adresse kann unser Server OpenStreetMap/Nominatim anfragen.</p>
   <p>Beim Check-in („Ich bin da“) übermittelt die App deinen aktuellen Standort einmalig. Der Server prüft damit nur, ob du am Event bist, und speichert die Koordinaten nicht. Gespeichert wird der Check-in selbst (Event, Zeitpunkt, Sichtbarkeit); er endet automatisch. Je nach Einstellung sehen deine Freunde, bei welchem Event du gerade bist; mit dem Ghost-Modus bleibt das verborgen.</p>
   <p>Erlaubst du den Standort „Immer“, meldet dein Gerät automatisch, wenn du den Bereich eines Events betrittst, zu dem du zugesagt oder ein Ticket hast. Auch dann wird dein Standort nur zur Prüfung übertragen und nicht gespeichert.</p>
   <p><strong>Rechtsgrundlage:</strong> Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), widerrufbar jederzeit in den Einstellungen deines Geräts.</p>
@@ -80,7 +80,7 @@
 
   <h3>3.10 Technische Daten und Fehlerberichte</h3>
   <p>Bei jedem Zugriff auf unsere API protokolliert der Server die Anfrage: IP-Adresse, Geräte- bzw. Browserkennung, aufgerufene Adresse und Zeitpunkt. Diese Protokolle speichert unser Hosting-Anbieter Railway; sie werden dort nach 7 Tagen automatisch gelöscht.</p>
-  <p>Tritt in App, Browser-Checkout oder API ein Fehler auf, können wir einen Fehlerbericht an Sentry senden. Er enthält technische Angaben zum Fehler; bei App und API kann er außerdem deine interne Nutzer-ID enthalten. Im Browser-Checkout entfernen wir vor dem Versand bekannte Zugangs- und Zahlungs-Tokens sowie E-Mail-Adressen und Query-Parameter aus URLs. Das App- und Checkout-Projekt speichert Berichte in der EU; die Region des API-Projekts prüfen wir noch.</p>
+  <p>Tritt in App, Browser-Checkout oder API ein Fehler auf, können wir einen Fehlerbericht an Sentry senden. Er enthält technische Angaben zum Fehler; bei App und API kann er außerdem deine interne Nutzer-ID enthalten. Im Browser-Checkout entfernen wir vor dem Versand bekannte Zugangs- und Zahlungs-Tokens sowie E-Mail-Adressen und Query-Parameter aus URLs. Sentry speichert alle Berichte in der EU und löscht sie spätestens nach 90 Tagen.</p>
   <p><strong>Rechtsgrundlage:</strong> Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO) – Sicherstellung des sicheren und fehlerfreien Betriebs.</p>
 
   <h3>3.11 Cookies auf der Website</h3>
@@ -91,12 +91,12 @@
   <p>Zur Bereitstellung von popspace nutzen wir folgende Auftragsverarbeiter bzw. Drittdienste:</p>
   <ul>
     <li><strong>Railway (Railway Corp., USA)</strong> — Hosting der Backend-API und Datenbank. Server in Europa.</li>
-    <li><strong>Cloudflare (Cloudflare Inc., USA)</strong> — Bild-Speicherung (R2) sowie Auslieferung des Ticket-Checkouts und der geteilten Links.</li>
+    <li><strong>Cloudflare (Cloudflare Inc., USA)</strong> — Bild-Speicherung (R2), verschlüsselte Datenbanksicherungen (R2, Speicherort EU) sowie Auslieferung des Ticket-Checkouts und der geteilten Links.</li>
     <li><strong>Vercel (Vercel Inc., USA)</strong> — Auslieferung der Website.</li>
     <li><strong>Stripe (Stripe Payments Europe Ltd., Irland)</strong> — Zahlungsabwicklung für Tickets und Auszahlungen an Veranstalter.</li>
     <li><strong>Resend (Resend Inc., USA)</strong> — Versand von E-Mails.</li>
-    <li><strong>Sentry (Functional Software Inc., USA)</strong> — Fehlerberichte aus App, Browser-Checkout und API. Die Speicherregion hängt vom Projekt ab; App und Checkout speichern Berichte in der EU.</li>
-    <li><strong>Geoapify (KEPTAGO LTD, Zypern)</strong> — Ortssuche und Geokodierung. Unser Server übermittelt dafür die eingegebene Orts- oder Adressanfrage; die Antwort wird in unserem Geocoding-Cache gespeichert.</li>
+    <li><strong>Sentry (Functional Software Inc., USA)</strong> — Fehlerberichte aus App, Browser-Checkout und API. Speicherung in der EU.</li>
+    <li><strong>Geoapify (KEPTAGO LTD, Zypern)</strong> — Ortssuche und Geokodierung, Verarbeitung in der EU. Unser Server übermittelt dafür die eingegebene Orts- oder Adressanfrage; die Antwort wird in unserem Geocoding-Cache gespeichert.</li>
     <li><strong>OpenStreetMap / Nominatim</strong> — Reserve für die Umwandlung fertiger Adressen in Koordinaten. Die Anfrage stellt unser Server, nicht dein Gerät.</li>
     <li><strong>Expo (650 Industries Inc., USA)</strong> — Weiterleitung von Push-Benachrichtigungen an Apple APNs oder Google FCM sowie App-Updates.</li>
     <li><strong>Apple Inc. (USA)</strong> — App-Distribution via TestFlight und App Store, Zustellung von Push-Benachrichtigungen über APNs und Kartendarstellung.</li>
@@ -108,6 +108,7 @@
 
   <h2>5. Speicherdauer</h2>
   <p>Du kannst die Löschung deines Kontos in der App unter „Konto löschen“ anfordern oder dich per E-Mail an <a href="mailto:betisa.sayahzadeh@gmail.com">betisa.sayahzadeh@gmail.com</a> wenden. Die App verlangt dafür dein aktuelles Passwort. Solange du künftige Events, offene Zahlungen, Erstattungen, Buchungen oder Auszahlungen hast, musst du diese zuerst abschließen. Nach dem Antrag sperren wir die Anmeldung sofort und entfernen Profil, soziale Verknüpfungen, eigene Kommentare, Chats und Check-ins. Bei gültigen gekauften Tickets schicken wir einen neuen Zugangslink an deine bisherige E-Mail-Adresse; erst nach Annahme der Mail durch den Versanddienst trennen wir diese Tickets vom Konto. Für die Abwicklung und gesetzliche Pflichten nötige Kauf- und Zahlungsdaten bleiben zweckgebunden erhalten. Bei einem Versandfehler prüfen wir den Löschauftrag manuell.</p>
+  <p>Wir sichern unsere Datenbank stündlich. Die Sicherungen sind verschlüsselt, liegen bei Cloudflare R2 in der EU und werden nach 30 Tagen automatisch gelöscht. Bis dahin können gelöschte Daten noch in älteren Sicherungen enthalten sein. Müssen wir eine Sicherung einspielen, führen wir alle seit ihrem Zeitpunkt beantragten Kontolöschungen erneut aus.</p>
 
   <h2>6. Deine Rechte</h2>
   <p>Du hast das Recht auf:</p>
