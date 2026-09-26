@@ -19,7 +19,7 @@
 <body>
   <p class="home"><a href="./">← zurück</a></p>
   <h1>Datenschutzerklärung</h1>
-  <p class="meta">Stand: 25. September 2026</p>
+  <p class="meta">Stand: 26. September 2026</p>
 
   <h2>1. Verantwortlicher</h2>
   <p>
@@ -62,6 +62,7 @@
 
   <h3>3.6 Standortdaten</h3>
   <p>Die Karte zeigt deine Position nur auf deinem Gerät; dafür übertragen wir deinen Standort nicht.</p>
+  <p>Wenn du bei einem Event einen Ort suchst oder eine Adresse eingibst, übermittelt unser Server diese Suchanfrage an Geoapify, damit wir Vorschläge und Koordinaten ermitteln können. Anfrage und Ergebnis speichern wir außerdem in einem Cache in unserer Datenbank. Treffer haben derzeit keine feste Löschfrist; erfolglose Anfragen werden nach 30 Tagen erneut geprüft. Als Reserve für die Umrechnung einer fertigen Adresse kann unser Server OpenStreetMap/Nominatim anfragen.</p>
   <p>Beim Check-in („Ich bin da“) übermittelt die App deinen aktuellen Standort einmalig. Der Server prüft damit nur, ob du am Event bist, und speichert die Koordinaten nicht. Gespeichert wird der Check-in selbst (Event, Zeitpunkt, Sichtbarkeit); er endet automatisch. Je nach Einstellung sehen deine Freunde, bei welchem Event du gerade bist; mit dem Ghost-Modus bleibt das verborgen.</p>
   <p>Erlaubst du den Standort „Immer“, meldet dein Gerät automatisch, wenn du den Bereich eines Events betrittst, zu dem du zugesagt oder ein Ticket hast. Auch dann wird dein Standort nur zur Prüfung übertragen und nicht gespeichert.</p>
   <p><strong>Rechtsgrundlage:</strong> Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), widerrufbar jederzeit in den Einstellungen deines Geräts.</p>
@@ -71,7 +72,7 @@
   <p><strong>Rechtsgrundlage:</strong> Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO); du kannst jederzeit widersprechen.</p>
 
   <h3>3.8 Benachrichtigungen und E-Mails</h3>
-  <p>Für Push-Benachrichtigungen speichern wir ein Geräte-Token. Welche Benachrichtigungen du erhältst, stellst du in der App ein. E-Mails (z. B. Bestätigungscodes, Tickets) versenden wir über Resend.</p>
+  <p>Für Push-Benachrichtigungen speichern wir ein Geräte-Token und senden Token, Titel, Nachrichtentext und technische Zusatzdaten an den Expo Push Service. Titel oder Text können zum Beispiel Eventnamen, Namen anderer Nutzer oder Auszüge aus Kommentaren enthalten. Expo leitet die Push-Nachricht an Apple Push Notification service (APNs) oder Firebase Cloud Messaging (FCM) weiter. Welche Benachrichtigungen du erhältst, stellst du in der App ein. E-Mails (z. B. Bestätigungscodes, Tickets) versenden wir über Resend.</p>
   <p><strong>Rechtsgrundlage:</strong> Vertrag (Art. 6 Abs. 1 lit. b DSGVO); Push-Benachrichtigungen nur mit deiner Einwilligung im Betriebssystem (Art. 6 Abs. 1 lit. a DSGVO).</p>
 
   <h3>3.9 Bilder</h3>
@@ -79,7 +80,7 @@
 
   <h3>3.10 Technische Daten und Fehlerberichte</h3>
   <p>Bei jedem Zugriff auf unsere API protokolliert der Server die Anfrage: IP-Adresse, Geräte- bzw. Browserkennung, aufgerufene Adresse und Zeitpunkt. Diese Protokolle speichert unser Hosting-Anbieter Railway; sie werden dort nach 7 Tagen automatisch gelöscht.</p>
-  <p>Tritt in App, Website oder API ein Fehler auf, senden wir einen Fehlerbericht an Sentry (Server in der EU). Er enthält technische Angaben zum Fehler und deine interne Nutzer-ID, aber keinen Namen und keine E-Mail-Adresse.</p>
+  <p>Tritt in App, Browser-Checkout oder API ein Fehler auf, können wir einen Fehlerbericht an Sentry senden. Er enthält technische Angaben zum Fehler; bei App und API kann er außerdem deine interne Nutzer-ID enthalten. Im Browser-Checkout entfernen wir vor dem Versand bekannte Zugangs- und Zahlungs-Tokens sowie E-Mail-Adressen und Query-Parameter aus URLs. Das App- und Checkout-Projekt speichert Berichte in der EU; die Region des API-Projekts prüfen wir noch.</p>
   <p><strong>Rechtsgrundlage:</strong> Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO) – Sicherstellung des sicheren und fehlerfreien Betriebs.</p>
 
   <h3>3.11 Cookies auf der Website</h3>
@@ -94,17 +95,19 @@
     <li><strong>Vercel (Vercel Inc., USA)</strong> — Auslieferung der Website.</li>
     <li><strong>Stripe (Stripe Payments Europe Ltd., Irland)</strong> — Zahlungsabwicklung für Tickets und Auszahlungen an Veranstalter.</li>
     <li><strong>Resend (Resend Inc., USA)</strong> — Versand von E-Mails.</li>
-    <li><strong>Sentry (Functional Software Inc., USA)</strong> — Fehlerberichte. Speicherung in der EU.</li>
-    <li><strong>Expo (650 Industries Inc., USA)</strong> — Zustellung von Push-Benachrichtigungen und App-Updates.</li>
-    <li><strong>Apple Inc. (USA)</strong> — App-Distribution via TestFlight und App Store, Push-Benachrichtigungen, Kartendarstellung.</li>
+    <li><strong>Sentry (Functional Software Inc., USA)</strong> — Fehlerberichte aus App, Browser-Checkout und API. Die Speicherregion hängt vom Projekt ab; App und Checkout speichern Berichte in der EU.</li>
+    <li><strong>Geoapify (KEPTAGO LTD, Zypern)</strong> — Ortssuche und Geokodierung. Unser Server übermittelt dafür die eingegebene Orts- oder Adressanfrage; die Antwort wird in unserem Geocoding-Cache gespeichert.</li>
+    <li><strong>OpenStreetMap / Nominatim</strong> — Reserve für die Umwandlung fertiger Adressen in Koordinaten. Die Anfrage stellt unser Server, nicht dein Gerät.</li>
+    <li><strong>Expo (650 Industries Inc., USA)</strong> — Weiterleitung von Push-Benachrichtigungen an Apple APNs oder Google FCM sowie App-Updates.</li>
+    <li><strong>Apple Inc. (USA)</strong> — App-Distribution via TestFlight und App Store, Zustellung von Push-Benachrichtigungen über APNs und Kartendarstellung.</li>
+    <li><strong>Google Firebase Cloud Messaging (FCM)</strong> — Zustellung von Push-Benachrichtigungen an Android-Geräte.</li>
     <li><strong>Anthropic PBC (USA)</strong> — Automatisches Auslesen von Eventdaten aus Bildern und Beiträgen (KI-Analyse).</li>
     <li><strong>Apify (Apify Technologies s.r.o., Tschechien)</strong> — Abruf öffentlicher Instagram-Beiträge für von uns eingetragene Events.</li>
-    <li><strong>OpenStreetMap / Nominatim</strong> — Umwandlung von Adressen in Koordinaten (Geokodierung). Die Anfrage stellt unser Server, nicht dein Gerät.</li>
   </ul>
   <p>Bei Übermittlungen in Drittländer (insb. USA) stützen wir uns auf Standardvertragsklauseln der EU-Kommission oder das EU-US Data Privacy Framework, sofern zertifiziert.</p>
 
   <h2>5. Speicherdauer</h2>
-  <p>Wir speichern deine Daten so lange dein Konto besteht. Die Löschung deines Kontos kannst du jederzeit per E-Mail an <a href="mailto:betisa.sayahzadeh@gmail.com">betisa.sayahzadeh@gmail.com</a> verlangen; deine personenbezogenen Daten werden dann binnen 30 Tagen gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten (etwa für Ticketkäufe und Zahlungen) dagegen sprechen.</p>
+  <p>Du kannst die Löschung deines Kontos in der App unter „Konto löschen“ anfordern oder dich per E-Mail an <a href="mailto:betisa.sayahzadeh@gmail.com">betisa.sayahzadeh@gmail.com</a> wenden. Die App verlangt dafür dein aktuelles Passwort. Solange du künftige Events, offene Zahlungen, Erstattungen, Buchungen oder Auszahlungen hast, musst du diese zuerst abschließen. Nach dem Antrag sperren wir die Anmeldung sofort und entfernen Profil, soziale Verknüpfungen, eigene Kommentare, Chats und Check-ins. Bei gültigen gekauften Tickets schicken wir einen neuen Zugangslink an deine bisherige E-Mail-Adresse; erst nach Annahme der Mail durch den Versanddienst trennen wir diese Tickets vom Konto. Für die Abwicklung und gesetzliche Pflichten nötige Kauf- und Zahlungsdaten bleiben zweckgebunden erhalten. Bei einem Versandfehler prüfen wir den Löschauftrag manuell.</p>
 
   <h2>6. Deine Rechte</h2>
   <p>Du hast das Recht auf:</p>
